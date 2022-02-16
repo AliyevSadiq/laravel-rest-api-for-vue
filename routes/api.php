@@ -27,5 +27,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::post('/auth/logout', [AuthController::class, 'logout']);
     Route::apiResource('category',\App\Http\Controllers\CategoryController::class);
+    Route::get('article','\App\Http\Controllers\ArticleController@index');
+    Route::post('article','\App\Http\Controllers\ArticleController@store');
+    Route::get('article/{article}','\App\Http\Controllers\ArticleController@show');
+    Route::post('article/{article}','\App\Http\Controllers\ArticleController@update');
+    Route::delete('article/{article}','\App\Http\Controllers\ArticleController@destroy');
 });
 

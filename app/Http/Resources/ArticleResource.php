@@ -20,6 +20,7 @@ class ArticleResource extends JsonResource
             'title'=>$this->title,
             'description'=>$this->description,
             'category'=>$this->category->title,
+            'category_id'=>$this->category_id,
             'user'=>$this->user->name,
             'image'=>Storage::disk('article')->url($this->image),
         ];

@@ -19,6 +19,10 @@ class ArticleRepository extends BaseRepository
         $this->imageManipulator = $imageManipulator;
     }
 
+    public function all()
+    {
+        return auth()->user()->articles()->get();
+    }
 
     public function create(array $fields)
     {
